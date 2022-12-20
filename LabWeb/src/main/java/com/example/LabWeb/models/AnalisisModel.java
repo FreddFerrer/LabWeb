@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class AnalisisModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     private Long id;
 
