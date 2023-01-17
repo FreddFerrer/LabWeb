@@ -1,6 +1,7 @@
 package com.example.LabWeb.models;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "lista")
@@ -8,7 +9,7 @@ public class AnalisisModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "analisis")

@@ -1,19 +1,16 @@
 package com.example.LabWeb.services;
 
 import com.example.LabWeb.models.AnalisisModel;
-import com.example.LabWeb.repository.ListaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
-public class ListaService {
+public interface ListaService {
 
-    @Autowired
-    ListaRepository listaRepo;
+    ArrayList<AnalisisModel> getAllAnalisis();
 
-    public ArrayList<AnalisisModel> obtenerAnalisis(){
-        return (ArrayList<AnalisisModel>) listaRepo.findAll();
-    }
+    Optional<AnalisisModel> getAnalisisById(Long id);
 }
