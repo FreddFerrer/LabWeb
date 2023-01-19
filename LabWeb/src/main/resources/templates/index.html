@@ -13,15 +13,20 @@
     <br>
     <p class="precio">Precio: </p>
     <br>
+    <div th:each="analisis:${mostrarAnalisis}">
+        <p class="lista-analisis-sumados" th:text="${analisis.analisis}">
+
+        </p>
+    </div>
     <div>
         <label for="buscador-analisis" class="form-label">Buscador</label>
         <input type="text" class="form-control" id="buscador-analisis" placeholder="analisis">
         <br>
         <div class="panel-body">
-            <ul class="list-group" th:each="analisis:${analisisLista}">
-                <li class="list-group-item" th:text="${analisis.analisis}">
-                </li>
-            </ul>
+            <div class="list-group" th:each="analisis:${analisisLista}">
+                <a class="list-group-item" th:text="${analisis.analisis}" th:href="@{/{id}(id=${analisis.id})}">
+                </a>
+            </div>
         </div>
     </div>
 

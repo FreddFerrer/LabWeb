@@ -23,4 +23,7 @@ public class ListaServiceImpl implements ListaService{
     public Optional<AnalisisModel> getAnalisisById(Long id) {
         return listaRepository.findById(id);
     }
+
+
+
 }

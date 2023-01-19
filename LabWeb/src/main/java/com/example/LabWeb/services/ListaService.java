@@ -13,4 +13,7 @@ public interface ListaService {
     ArrayList<AnalisisModel> getAllAnalisis();
 
     Optional<AnalisisModel> getAnalisisById(Long id);
+
+
+
 }
