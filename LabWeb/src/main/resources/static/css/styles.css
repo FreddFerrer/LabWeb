@@ -2,7 +2,8 @@
     height:  500px;
     overflow: scroll;
 }
-.list-group-item {
+.btn {
+    border: 1px;
     margin: 10px;
 }
 
@@ -18,7 +19,7 @@
     display: none;
 }
 
-.list-group-item:hover {
+.btn:hover {
 
   box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
   transition: all 0.2s ease;

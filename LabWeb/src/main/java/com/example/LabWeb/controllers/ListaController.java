@@ -4,19 +4,17 @@ import com.example.LabWeb.models.AnalisisModel;
 import com.example.LabWeb.repository.ListaRepository;
 import com.example.LabWeb.services.ListaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
-import java.util.ArrayList;
-import java.util.Optional;
+import java.util.*;
 
-@RestController
+@Controller
 @RequestMapping("/")
+
 public class ListaController {
 
     @Autowired
@@ -25,16 +23,17 @@ public class ListaController {
     @Autowired
     ListaRepository listaRepository;
 
+    ModelAndView modelAndView = new ModelAndView("index");
+
     @GetMapping("/analisis")
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("analisisLista", listaService.getAllAnalisis());
+        List<AnalisisModel> listaAnalisis = listaService.getAllAnalisis();
+        modelAndView.addObject("analisisLista", listaAnalisis);
         return modelAndView;
     }
 
     @GetMapping("/{id}")
     public ModelAndView obtenerById(@PathVariable("id") Long id) {
-        ModelAndView modelAndView = new ModelAndView("index");
         AnalisisModel analisisSeleccionado = listaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("nope"));
         double precioUnitario = analisisSeleccionado.getPrecio();
         modelAndView.addObject("mostrarAnalisis", analisisSeleccionado);
@@ -42,5 +41,20 @@ public class ListaController {
 
         return modelAndView;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

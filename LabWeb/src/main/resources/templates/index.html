@@ -15,7 +15,7 @@
     <br>
     <div th:each="analisis:${mostrarAnalisis}">
         <p class="lista-analisis-sumados" th:text="${analisis.analisis}">
-
+            Analisis:
         </p>
     </div>
     <div>
@@ -24,7 +24,8 @@
         <br>
         <div class="panel-body">
             <div class="list-group" th:each="analisis:${analisisLista}">
-                <a class="list-group-item" th:text="${analisis.analisis}" th:href="@{/{id}(id=${analisis.id})}">
+                <a class="btn" th:text="${analisis.analisis}" th:href="@{/{id}(id=${analisis.id})}"
+                onclick="agregar()">
                 </a>
             </div>
         </div>

@@ -12,7 +12,18 @@ document.addEventListener("keyup", e=>{
       })
 
   }
-
-
 })
+var analisis = []
+var precios = []
+
+function agregar() {
+    let nombreAnalisis = document.getElementById("analisis");
+    let precioAnalisis = document.getElementById("analisis");
+    console.log(JSON.stringify(nombreAnalisis));
+    analisis.push(nombreAnalisis)
+    precios.push(precioAnalisis)
+    console.log(nombreAnalisis)
+}
+
+
 
