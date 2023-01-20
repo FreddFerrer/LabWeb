@@ -20,8 +20,6 @@ public class ListaController {
     @Autowired
     ListaService listaService;
 
-    @Autowired
-    ListaRepository listaRepository;
 
     ModelAndView modelAndView = new ModelAndView("index");
 
@@ -32,14 +30,13 @@ public class ListaController {
         return modelAndView;
     }
 
-    @GetMapping("/{id}")
-    public ModelAndView obtenerById(@PathVariable("id") Long id) {
-        AnalisisModel analisisSeleccionado = listaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("nope"));
-        double precioUnitario = analisisSeleccionado.getPrecio();
-        modelAndView.addObject("mostrarAnalisis", analisisSeleccionado);
-        System.out.println("funciona");
 
-        return modelAndView;
+    @PostMapping("/agregar-analisis")
+    public @ResponseBody List<String> agregarString(@RequestBody String string, ModelAndView modelAndView) {
+        listaService.agregarAnalisis(string);
+        modelAndView.addObject("mostrarAnalisis", listaService.getListaAnalisis());
+        System.out.println("funcionar agregar");
+        return listaService.getListaAnalisis();
     }
 
 

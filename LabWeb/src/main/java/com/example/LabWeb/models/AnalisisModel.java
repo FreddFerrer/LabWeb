@@ -41,4 +41,6 @@ public class AnalisisModel {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+
 }

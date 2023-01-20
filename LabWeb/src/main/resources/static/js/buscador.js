@@ -4,7 +4,7 @@ document.addEventListener("keyup", e=>{
 
       if (e.key ==="Escape")e.target.value = ""
 
-      document.querySelectorAll(".list-group-item").forEach(analisis =>{
+      document.querySelectorAll(".btn").forEach(analisis =>{
 
           analisis.textContent.toLowerCase().includes(e.target.value.toLowerCase())
             ?analisis.classList.remove("filtro")
@@ -15,15 +15,20 @@ document.addEventListener("keyup", e=>{
 })
 var analisis = []
 var precios = []
+var elementosSeleccionados = [];
 
-function agregar() {
-    let nombreAnalisis = document.getElementById("analisis");
-    let precioAnalisis = document.getElementById("analisis");
-    console.log(JSON.stringify(nombreAnalisis));
-    analisis.push(nombreAnalisis)
-    precios.push(precioAnalisis)
-    console.log(nombreAnalisis)
-}
+  function agregarElemento(id, nombre) {
+      var elemento = { id: id, nombre: nombre };
+      elementosSeleccionados.push(elemento);
+      console.log(elementosSeleccionados)
+  }
+
+
+
+
+
+
+
 
 
 
