@@ -15,7 +15,7 @@ public class ListaServiceImpl implements ListaService{
     @Autowired
     ListaRepository listaRepository;
 
-    private List<String> listaAnalisis = new ArrayList<>();
+    public List<String> listaAnalisis = new ArrayList<>();
 
     @Override
     public ArrayList<AnalisisModel> getAllAnalisis() {
@@ -35,6 +35,12 @@ public class ListaServiceImpl implements ListaService{
     @Override
     public void agregarAnalisis(String string) {
         listaAnalisis.add(string);
+    }
+
+    @Override
+    public void obtenerAnalisisSeleccionado(List<AnalisisModel> listaAnalisis) {
+        Long id;
+        String nombreAnalisis;
     }
 
 

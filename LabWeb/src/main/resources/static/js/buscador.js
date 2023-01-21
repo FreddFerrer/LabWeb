@@ -13,15 +13,31 @@ document.addEventListener("keyup", e=>{
 
   }
 })
-var analisis = []
-var precios = []
-var elementosSeleccionados = [];
 
-  function agregarElemento(id, nombre) {
-      var elemento = { id: id, nombre: nombre };
-      elementosSeleccionados.push(elemento);
-      console.log(elementosSeleccionados)
-  }
+var precios = []
+
+var analisisSeleccionados = [];
+
+function agregarAnalisis(listaObjetos) {
+
+    var botones = document.querySelectorAll('button[name="analisis"]');
+
+    botones.forEach(function(boton) {
+        boton.addEventListener("click", function() {
+            var id = boton.value;
+            var objetoSeleccionado = listaObjetos.find(function(objeto) {
+                return objeto.id === id;
+            });
+            analisisSeleccionados.push(objetoSeleccionado);
+            console.log(analisisSeleccionados)
+        });
+        console.log(analisisSeleccionados)
+    });
+    console.log(analisisSeleccionados)
+    return analisisSeleccionados;
+}
+
+
 
 
 

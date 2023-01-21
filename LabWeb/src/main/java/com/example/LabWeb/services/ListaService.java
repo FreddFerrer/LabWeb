@@ -18,5 +18,7 @@ public interface ListaService {
     List<String> getListaAnalisis();
     void agregarAnalisis(String string);
 
+    void obtenerAnalisisSeleccionado(List<AnalisisModel> listaAnalisis);
+
 
 }
