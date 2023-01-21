@@ -7,6 +7,15 @@ import org.springframework.lang.NonNull;
 @Table(name = "lista")
 public class AnalisisModel {
 
+    public AnalisisModel() {
+    }
+
+    public AnalisisModel(Long id, String analisis, double precio) {
+        this.id = id;
+        this.analisis = analisis;
+        this.precio = precio;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -41,4 +50,6 @@ public class AnalisisModel {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+
 }

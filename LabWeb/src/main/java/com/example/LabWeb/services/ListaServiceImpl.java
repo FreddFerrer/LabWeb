@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,6 +14,8 @@ public class ListaServiceImpl implements ListaService{
 
     @Autowired
     ListaRepository listaRepository;
+
+    public List<String> listaAnalisis = new ArrayList<>();
 
     @Override
     public ArrayList<AnalisisModel> getAllAnalisis() {
@@ -23,4 +26,22 @@ public class ListaServiceImpl implements ListaService{
     public Optional<AnalisisModel> getAnalisisById(Long id) {
         return listaRepository.findById(id);
     }
+
+    @Override
+    public List<String> getListaAnalisis() {
+        return listaAnalisis;
+    }
+
+    @Override
+    public void agregarAnalisis(String string) {
+        listaAnalisis.add(string);
+    }
+
+    @Override
+    public void obtenerAnalisisSeleccionado(List<AnalisisModel> listaAnalisis) {
+        Long id;
+        String nombreAnalisis;
+    }
+
+
 }

@@ -8,20 +8,26 @@
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<div class="container text-center">
+<div class="container text-center" >
     <h2 class="text-center">Calculadora</h2>
     <br>
     <p class="precio">Precio: </p>
     <br>
+    <div th:each="analisis:${mostrarAnalisis}" id="analisisSeleccionados">
+        <p class="lista-analisis-sumados" th:text="${analisis.analisis}" >
+            Analisis:
+        </p>
+    </div>
     <div>
         <label for="buscador-analisis" class="form-label">Buscador</label>
         <input type="text" class="form-control" id="buscador-analisis" placeholder="analisis">
         <br>
         <div class="panel-body">
-            <ul class="list-group" th:each="analisis:${analisisLista}">
-                <li class="list-group-item" th:text="${analisis.analisis}">
-                </li>
-            </ul>
+            <div class="list-group" th:each="lista:${analisisLista}">
+                <a class="btn"  type="button" th:text="${lista.analisis}" id="analisis"
+                   onclick="var seleccionados = agregarAnalisis('${lista}')">
+                </a >
+            </div>
         </div>
     </div>
 
@@ -29,7 +35,7 @@
 </div>
 
 
-
 <script type="text/javascript" th:src="@{/js/buscador.js}"></script>
 </body>
 </html>
+
