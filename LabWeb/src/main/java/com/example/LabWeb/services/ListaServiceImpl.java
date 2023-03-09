@@ -1,10 +1,13 @@
 package com.example.LabWeb.services;
 
 import com.example.LabWeb.models.AnalisisModel;
-import com.example.LabWeb.repository.ListaRepository;
+import com.example.LabWeb.repository.IAnalisisDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,35 +16,18 @@ import java.util.Optional;
 public class ListaServiceImpl implements ListaService{
 
     @Autowired
-    ListaRepository listaRepository;
-
-    public List<String> listaAnalisis = new ArrayList<>();
-
-    @Override
-    public ArrayList<AnalisisModel> getAllAnalisis() {
-        return (ArrayList<AnalisisModel>) listaRepository.findAll();
-    }
+    IAnalisisDAO listaRepository;
+    AnalisisModel analisisModel;
 
     @Override
-    public Optional<AnalisisModel> getAnalisisById(Long id) {
-        return listaRepository.findById(id);
+    @Transactional(readOnly = true)
+    public List<AnalisisModel> getAllAnalisis() {
+        return (List<AnalisisModel>) listaRepository.findAll();
     }
 
-    @Override
-    public List<String> getListaAnalisis() {
-        return listaAnalisis;
-    }
 
-    @Override
-    public void agregarAnalisis(String string) {
-        listaAnalisis.add(string);
-    }
 
-    @Override
-    public void obtenerAnalisisSeleccionado(List<AnalisisModel> listaAnalisis) {
-        Long id;
-        String nombreAnalisis;
-    }
+
 
 
 }

@@ -1,20 +1,12 @@
 package com.example.LabWeb.models;
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
+
+import java.text.DecimalFormat;
 
 @Entity
 @Table(name = "lista")
 public class AnalisisModel {
-
-    public AnalisisModel() {
-    }
-
-    public AnalisisModel(Long id, String analisis, double precio) {
-        this.id = id;
-        this.analisis = analisis;
-        this.precio = precio;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +17,7 @@ public class AnalisisModel {
     private String analisis;
 
     @Column(name = "precio")
-    private double precio;
+    private Double precio;
 
     public Long getId() {
         return id;
@@ -44,7 +36,7 @@ public class AnalisisModel {
     }
 
     public double getPrecio() {
-        return precio;
+        return precio = Math.round(precio*100.0)/100.0;
     }
 
     public void setPrecio(double precio) {
