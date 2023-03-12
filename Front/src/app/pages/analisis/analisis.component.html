@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Lista 1</h2>
+        <ul *ngFor="let analisis of analisisService.analisis" class="list-group">
+          <button type="button" class="list-group-item list-group-item-action"
+          (click)="mostrarAnalisis(analisis)">{{ analisis.analisis }}</button>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h2>Lista 2</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let analisis of analisisSeleccionados"> {{ analisis.analisis }}</li>
+        </ul>
+        <div>
+          <!-- <p (click)="sumarAnalisis(precio)">total: {{ precio }}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
