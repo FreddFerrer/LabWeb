@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BuscadorComponent } from '../buscador/buscador.component';
 import { IAnalisis } from '../interfaces/Ianalisis';
 import { HttpClient } from '@angular/common/http';
+import { AnalisisService } from '../services/analisis-service.service';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HeaderComponent implements OnInit{
 
-  searchTerm: string = '';
 
-  ngOnInit(): void {
+  
+  buscarAnalisis(event: KeyboardEvent){
+    const valor = (event.target as HTMLInputElement).value;
+    
+    console.log(valor)
   }
 
+
+  ngOnInit(): void {
+    
+  }
 }
