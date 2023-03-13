@@ -15,7 +15,11 @@ export class AnalisisService {
   public analisisFiltrado: IAnalisis[];
   public urlEndPoint:string = 'http://localhost:8080/api/analisis';
 
+<<<<<<< HEAD
   constructor(private http: HttpClient, router: Router) { 
+=======
+  constructor(private http: HttpClient) { 
+>>>>>>> prod
     this.http = http;
     this.cargarAnalisis();
   }
@@ -28,5 +32,10 @@ export class AnalisisService {
         this.cargando = false;
       });
     }); 
+<<<<<<< HEAD
   } 
+=======
+  }
+
+>>>>>>> prod
 }

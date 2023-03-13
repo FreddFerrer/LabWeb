@@ -1,19 +1,37 @@
 <div class="container">
     <div class="row">
       <div class="col-md-6">
+<<<<<<< HEAD
         <h2>Lista 1</h2>
         <ul *ngFor="let analisis of analisisService.analisis" class="list-group">
           <button type="button" class="list-group-item list-group-item-action"
+=======
+        <h2>Lista completa</h2>
+        <ul *ngFor="let analisis of analisisService.analisis" class="list-group">
+          <button type="button" class="list-group-item list-group-item-action"  
+>>>>>>> prod
           (click)="mostrarAnalisis(analisis)">{{ analisis.analisis }}</button>
         </ul>
       </div>
       <div class="col-md-6">
+<<<<<<< HEAD
         <h2>Lista 2</h2>
         <ul class="list-group">
           <li class="list-group-item" *ngFor="let analisis of analisisSeleccionados"> {{ analisis.analisis }}</li>
         </ul>
         <div>
           <!-- <p (click)="sumarAnalisis(precio)">total: {{ precio }}</p> -->
+=======
+        <h2>Seleccionados</h2>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let analisis of analisisSeleccionados"> {{ analisis.analisis }}</li>
+        </ul>
+        <br>
+        <div *ngIf="analisisSeleccionados.length > 0">
+          <button type="button" class="btn btn-primary" (click)="sumarAnalisis()">Sumar precios</button>
+          <br>
+          <p *ngIf="precios">Total: {{ precios.toFixed(2) }}</p>
+>>>>>>> prod
         </div>
       </div>
     </div>
