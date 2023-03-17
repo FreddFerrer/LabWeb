@@ -19,7 +19,7 @@ public class LabWebApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**").allowedOrigins("https://labweb-production.up.railway.app",
-																	"https://localhost:4200/").allowedMethods("*")
+																	"https://freddferrer.github.io/LabWeb-Front/").allowedMethods("*")
 						.allowedHeaders("*");
 			}
 		};
