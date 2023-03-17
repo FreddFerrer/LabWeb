@@ -18,7 +18,8 @@ public class LabWebApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://labweb-production.up.railway.app/api/analisis").allowedMethods("*")
+				registry.addMapping("/**").allowedOrigins("https://labweb-production.up.railway.app",
+																	"https://localhost:4200/").allowedMethods("*")
 						.allowedHeaders("*");
 			}
 		};
