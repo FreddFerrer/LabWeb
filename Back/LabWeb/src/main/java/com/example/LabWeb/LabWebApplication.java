@@ -18,7 +18,7 @@ public class LabWebApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://freddferrer.github.io/LabWeb-Front/").allowedMethods("*")
+				registry.addMapping("/**").allowedOrigins("https://freddferrer.github.io").allowedMethods("*")
 						.allowedHeaders("*");
 			}
 		};
