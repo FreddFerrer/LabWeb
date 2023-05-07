@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IAnalisisDAO extends CrudRepository<AnalisisModel, Long> {
-
 }
